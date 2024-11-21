@@ -72,7 +72,7 @@ EOF
   if [ -z "$command" ]; then
     kubectl attach -n "$ns" -it "$pod" -c ssh-node "$@"
   else
-    kubectl exec -n "$ns" -it "$pod" ssh-node -- "$command"
+    kubectl exec -n "$ns" -it "$pod" ssh-node -- $command
   fi
 }
 
